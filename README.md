@@ -43,12 +43,6 @@ add_filter(
 
 A constant turns a feature off even if the filter includes it.
 
-## Moving from the Block Enhancements plugins
-
-Core Blocks Plus replaces the separate `bdchandler/block-enhancements-flex`, `-position`, `-inline-icons` and `-group-link` plugins. It uses the same saved data, so content made with them works unchanged.
-
-Deactivate the old plugins after activating this one. While an old plugin is still active, Core Blocks Plus leaves that feature off (so it isn't applied twice) and shows a notice to administrators.
-
 ## Flex sizing
 
 Feature slug: `flex`
@@ -153,14 +147,14 @@ Content only stores the icon's name, as an image tag like core's inline image, s
 
 ```html
 <!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Download <img class="wp-inline-icon" data-icon="gdr/download" alt=""></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Download <img class="wp-inline-icon" data-icon="core/arrow-down" alt=""></a></div>
 <!-- /wp:button -->
 ```
 
 With settings:
 
 ```html
-<img class="wp-inline-icon" data-icon="gdr/arrow-right" alt="Next"
+<img class="wp-inline-icon" data-icon="core/arrow-right" alt="Next"
 	style="--wp-inline-icon--size:24px;--wp-inline-icon--color:var(--wp--preset--color--primary);--wp-inline-icon--hover-color:var(--wp--preset--color--base)">
 ```
 

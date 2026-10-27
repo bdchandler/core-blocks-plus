@@ -62,7 +62,7 @@ export const NoShrinkControl = ( { clientId, attributes, setAttributes } ) => {
 		<InspectorControls group="dimensions">
 			<ToolsPanelItem
 				panelId={ clientId }
-				label={ __( "Don't squash", 'core-blocks-plus' ) }
+				label={ __( 'Prevent shrinking', 'core-blocks-plus' ) }
 				hasValue={ () => hasNoShrinkValue( style, viewport ) }
 				onDeselect={ () => onChange( undefined ) }
 				resetAllFilter={ ( next ) => ( {
@@ -72,7 +72,7 @@ export const NoShrinkControl = ( { clientId, attributes, setAttributes } ) => {
 			>
 				<ToggleControl
 					__nextHasNoMarginBottom
-					label={ __( "Don't squash", 'core-blocks-plus' ) }
+					label={ __( 'Prevent shrinking', 'core-blocks-plus' ) }
 					help={ noShrink ? HELP_ON : HELP_OFF }
 					checked={ noShrink }
 					onChange={ onChange }
