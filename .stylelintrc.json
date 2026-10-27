@@ -1,0 +1,15 @@
+{
+	"extends": [
+		"@wordpress/stylelint-config/stylistic"
+	],
+	"rules": {
+		"@stylistic/max-line-length": [
+			120,
+			{
+				"ignore": ["comments"]
+			}
+		],
+		"selector-class-pattern": null,
+		"no-descending-specificity": null
+	}
+}

@@ -1,0 +1,6 @@
+/**
+ * Editor UI: the label field under core's link control.
+ */
+.core-blocks-plus-group-link__label {
+	padding: 0 16px 16px;
+}

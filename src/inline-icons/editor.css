@@ -1,0 +1,60 @@
+/**
+ * Editor UI: the icon picker and the selected icon's popover.
+ */
+.core-blocks-plus-inline-icons__svg {
+	display: inline-flex;
+	width: 24px;
+	height: 24px;
+}
+
+.core-blocks-plus-inline-icons__svg svg {
+	width: 100%;
+	height: 100%;
+	fill: currentcolor;
+}
+
+.core-blocks-plus-inline-icons-picker__filters {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 8px;
+	align-items: center;
+}
+
+.core-blocks-plus-inline-icons-picker__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+	gap: 8px;
+	margin-top: 16px;
+}
+
+.core-blocks-plus-inline-icons-picker__grid .components-button {
+	justify-content: center;
+	width: 100%;
+	height: 48px;
+}
+
+.core-blocks-plus-inline-icons-popover .components-popover__content {
+	width: 280px;
+	padding: 16px;
+}
+
+.core-blocks-plus-inline-icons-popover__icon {
+	min-width: 0;
+}
+
+.core-blocks-plus-inline-icons-popover__icon span:last-child {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.core-blocks-plus-inline-icons-popover__header .components-button {
+	flex-shrink: 0;
+}
+
+.core-blocks-plus-inline-icons-popover__colors {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}

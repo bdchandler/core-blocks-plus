@@ -1,0 +1,7 @@
+# build/ is committed so Composer installs work without an npm step.
+node_modules
+/vendor
+
+.DS_Store
+*.log
+*.zip

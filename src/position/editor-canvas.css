@@ -1,0 +1,7 @@
+/**
+ * Editor only: bring a selected Absolute or Fixed block in front of everything
+ * else in the canvas, so it and its handles stay reachable.
+ */
+.has-block-position-overlay.is-selected {
+	z-index: 100000 !important;
+}

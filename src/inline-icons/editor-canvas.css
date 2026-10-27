@@ -1,0 +1,22 @@
+/**
+ * Editor only: icons are saved as image tags without a source, so the editor
+ * gives each one a transparent pixel (so every browser draws it at its size)
+ * and draws the icon as a mask. Each icon's mask image is set per data-icon
+ * by the editor script.
+ */
+img.wp-inline-icon {
+	content: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+	height: auto;
+	aspect-ratio: 1;
+	background-color: currentcolor;
+	mask: var(--wp-inline-icon--mask) center / contain no-repeat;
+}
+
+/**
+ * Browsers tint a selected image, and through the mask that fades the icon,
+ * hiding its colour while its popover is open. Skip the tint; the popover
+ * shows which icon is selected.
+ */
+img.wp-inline-icon::selection {
+	background-color: transparent;
+}

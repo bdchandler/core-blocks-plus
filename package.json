@@ -1,0 +1,29 @@
+{
+  "name": "core-blocks-plus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Extra options for WordPress core blocks: flex sizing, responsive positioning, inline icons and linked Groups.",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:css:fix": "wp-scripts lint-style --fix",
+    "lint:js": "wp-scripts lint-js",
+    "lint:js:fix": "wp-scripts lint-js --fix",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^24.3.0",
+    "@wordpress/prettier-config": "^4.40.0",
+    "@wordpress/scripts": "^31.5.0",
+    "@wordpress/stylelint-config": "^23.32.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "stylelint": "^16.26.1"
+  },
+  "dependencies": {
+    "@wordpress/icons": "^18.0.0"
+  }
+}

@@ -1,0 +1,53 @@
+/**
+ * Linked blocks: a link is added as the block's last child and stretched over
+ * it, with links and buttons inside raised above it so they still work.
+ *
+ * The block-level rules use :where() so they have no specificity: any other
+ * position setting (Sticky, or the position plugin) wins, and any positioned
+ * block works as the link's base.
+ */
+:where(.has-group-link) {
+	position: relative;
+}
+
+:where(.has-group-link) :where(a, button, input, select, textarea, summary, label, iframe, video, audio, [tabindex]) {
+	position: relative;
+	z-index: 1;
+}
+
+/* A linked block inside another one stays clickable above the outer link. */
+:where(.has-group-link .has-group-link) {
+	position: relative;
+	z-index: 1;
+}
+
+/**
+ * The stretched link. Absolute, so it takes no space or slot in Row (flex) and
+ * Grid layouts. The margin and max-width override the ones constrained and flow
+ * layouts give their children, which would otherwise shrink or shift it.
+ */
+.has-group-link > .wp-group-link {
+	position: absolute;
+	inset: 0;
+	z-index: auto;
+	max-width: none;
+	margin: 0 !important;
+	border-radius: inherit;
+}
+
+/**
+ * The link's label is for screen readers only. Hidden here as well, in case
+ * the theme doesn't load core's .screen-reader-text styles.
+ */
+.wp-group-link .screen-reader-text {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	word-wrap: normal;
+}

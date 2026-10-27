@@ -1,0 +1,67 @@
+/**
+ * Inline icons: sized to the text by default, coloured with the text colour
+ * unless an icon colour is set.
+ *
+ * Each setting comes from the first of:
+ *  1. --wp-inline-icon--*: set on the icon (in the editor), or on its button by
+ *     a block style variation's `css`. The icon's own value wins, as it's set on
+ *     the icon itself rather than inherited.
+ *  2. --wp--custom--inline-icon--*: theme.json defaults, from
+ *     settings.custom.inlineIcon (all icons) or
+ *     settings.blocks["core/button"].custom.inlineIcon (icons in buttons).
+ *  3. The built-in default: 1em, the text colour, a 0.5em gap.
+ *
+ * Properties starting --wp-inline-icon--_ are internal: the resolved values.
+ */
+.wp-inline-icon {
+	--wp-inline-icon--_size: var(--wp-inline-icon--size, var(--wp--custom--inline-icon--size, 1em));
+	--wp-inline-icon--_color: var(--wp-inline-icon--color, var(--wp--custom--inline-icon--color, currentcolor));
+	--wp-inline-icon--_hover: var(--wp--custom--inline-icon--hover-color, var(--wp-inline-icon--_color));
+	display: inline-block;
+	width: var(--wp-inline-icon--_size);
+	line-height: 0;
+	vertical-align: -0.125em;
+	color: var(--wp-inline-icon--_color);
+}
+
+/**
+ * Centre the icon on the height of capital letters, where the cap unit is
+ * supported. middle uses the lowercase x-height, which sits the icon low next
+ * to capitals and in buttons.
+ */
+@supports (width: 1cap) {
+
+	.wp-inline-icon {
+		vertical-align: calc((1cap - var(--wp-inline-icon--_size)) / 2);
+	}
+}
+
+.wp-inline-icon svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	fill: currentcolor;
+}
+
+/**
+ * Hover colour, inside a link or button only. Without a hover colour, the icon
+ * keeps its colour if it has one, or follows the text's hover colour if not.
+ * .wp-block-button__link covers the Button block in the editor, where its text
+ * isn't a link element.
+ */
+:where(a, button, .wp-block-button__link):is(:hover, :focus-visible) .wp-inline-icon {
+	color: var(--wp-inline-icon--hover-color, var(--wp-inline-icon--_hover));
+}
+
+/**
+ * Buttons with an icon: inline-flex keeps the button the width of its content,
+ * with a gap between text and icon. If the button is made wider (a width
+ * setting, or styles on the Buttons block or a parent), the text and icon move
+ * to opposite ends, on the side each was placed.
+ */
+.wp-block-button__link:has(.wp-inline-icon) {
+	display: inline-flex;
+	gap: var(--wp-inline-icon--gap, var(--wp--custom--inline-icon--gap, 0.5em));
+	align-items: center;
+	justify-content: space-between;
+}
